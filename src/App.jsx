@@ -9,10 +9,14 @@ function App() {
   const [todos, setTodos] = useState([]); //holds all todo
 
   const handleEdit = () => {
-
+     
   };
 
-  const handleDelete = () => {
+  const handleDelete = (e,id) => {
+   let newTodos = todos.filter(item => {
+    return item.id !== id
+   });
+   setTodos(newTodos);
 
   };
 
@@ -34,7 +38,7 @@ function App() {
    let newTodos = [...todos];
    newTodos[index].isCompleted = !newTodos[index].isCompleted;
    setTodos(newTodos);
-
+   console.log(newTodos , todos)
   }
   
 
@@ -80,7 +84,7 @@ function App() {
                 </button>
 
                 <button
-                  onClick={handleDelete}
+                  onClick={(e) => {handleDelete(e , item.id)}}
                   className="bg-violet-800 hover:bg-violet-950 p-1 py-1 text-xs text-white font-bold rounded-md mx-1"
                 >
                   Delete
