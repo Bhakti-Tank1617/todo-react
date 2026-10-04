@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 import Navbar from "./components/Navbar";
 import { stringify, v4 as uuidv4 } from "uuid";
-// import React  from "react";
-// import { useState  } from "react";
+import { FaEdit } from "react-icons/fa";
+import { MdDelete } from "react-icons/md";
 
 function App() {
   const [todo, setTodo] = useState(""); //input text
@@ -69,21 +69,22 @@ function App() {
     <>
       <Navbar />
 
-      <div className="container mx-auto my-5 rounded-xl p-5 bg-violet-100 min-h-[90vh]">
-        <div className="addtodo">
+      <div className="container mx-auto my-5 rounded-xl p-5 bg-violet-100 min-h-[90vh] w-1/2">
+      <h1 className="font-bold text-center text-xl">iTask-Manage your todos at one Place</h1>
+        <div className="addtodo my-5 flex flex-col gap-3">
           <h2 className="text-lg font-bold my-2">Add a Todo</h2>
 
           <input
             onChange={handleChange}
             value={todo}
             type="text"
-            className="w-1/2"
+            className="w-full rounded-lg px-5 py-1"
           />
 
           <button
             onClick={handleAdd}
             disabled={todo.length <= 3}
-            className="bg-violet-800 hover:bg-violet-950 disabled:bg-violet-700 p-1 pl-2 pr-2 text-sm text-white font-bold rounded-md mx-6"
+            className="bg-violet-800 hover:bg-violet-950 disabled:bg-violet-700 p-1 pl-2 pr-2 text-sm text-white font-bold rounded-md "
           >
             Save
           </button>
@@ -93,7 +94,7 @@ function App() {
           type="checkbox"
           checked={showfinished}
         />
-        Show Finished
+        {/* Show Finished */}
         <h2 className="text-lg font-bold">Your Todos</h2>
         <div className="todos">
           {todos.length === 0 && <div className="m-5">No todo to display</div>}
@@ -122,7 +123,7 @@ function App() {
                     }}
                     className="bg-violet-800 hover:bg-violet-950 p-1 py-1 text-xs text-white font-bold rounded-md mx-1"
                   >
-                    Edit
+                   <FaEdit />
                   </button>
 
                   <button
@@ -131,7 +132,7 @@ function App() {
                     }}
                     className="bg-violet-800 hover:bg-violet-950 p-1 py-1 text-xs text-white font-bold rounded-md mx-1"
                   >
-                    Delete
+                  <MdDelete />
                   </button>
                 </div>
               )
