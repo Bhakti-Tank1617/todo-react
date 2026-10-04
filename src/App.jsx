@@ -69,10 +69,10 @@ function App() {
     <>
       <Navbar />
 
-      <div className="container mx-auto my-5 rounded-xl p-5 bg-violet-100 min-h-[90vh] w-1/2">
-      <h1 className="font-bold text-center text-xl">iTask-Manage your todos at one Place</h1>
+      <div className=" mx-3md:container md:mx-auto my-5 rounded-xl p-5 bg-violet-100 min-h-[90vh]  md:w-[35%]">
+      <h1 className="font-bold text-center text-3xl">iTask-Manage your todos at one Place</h1>
         <div className="addtodo my-5 flex flex-col gap-3">
-          <h2 className="text-lg font-bold my-2">Add a Todo</h2>
+          <h2 className="text-2xl font-bold my-2">Add a Todo</h2>
 
           <input
             onChange={handleChange}
@@ -93,15 +93,16 @@ function App() {
           onChange={toggleFinished}
           type="checkbox"
           checked={showfinished}
-        />
+          className="mx-2"
+        />Show Finished
         {/* Show Finished */}
-        <h2 className="text-lg font-bold">Your Todos</h2>
+        <h2 className="text-2xl font-bold">Your Todos</h2>
         <div className="todos">
           {todos.length === 0 && <div className="m-5">No todo to display</div>}
           {todos.map((item) => {
             return (
               (showfinished || !item.isCompleted) && (
-                <div key={item.id} className="todo flex w-1/2 my-3 items-start">
+                <div key={item.id} className="todo flex  my-3 items-start">
                   <div className="flex gap-2 items-start w-full">
                     <input
                       name={item.id}
@@ -121,7 +122,7 @@ function App() {
                     onClick={(e) => {
                       handleEdit(e, item.id);
                     }}
-                    className="bg-violet-800 hover:bg-violet-950 p-1 py-1 text-xs text-white font-bold rounded-md mx-1"
+                    className="bg-violet-800 hover:bg-violet-950 px-3 py-1 text-xs text-white font-bold rounded-md mx-1"
                   >
                    <FaEdit />
                   </button>
@@ -130,7 +131,7 @@ function App() {
                     onClick={(e) => {
                       handleDelete(e, item.id);
                     }}
-                    className="bg-violet-800 hover:bg-violet-950 p-1 py-1 text-xs text-white font-bold rounded-md mx-1"
+                    className="bg-violet-800 hover:bg-violet-950 px-3 py-1 text-xs text-white font-bold rounded-md mx-1"
                   >
                   <MdDelete />
                   </button>
