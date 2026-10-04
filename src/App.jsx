@@ -70,7 +70,9 @@ function App() {
       <Navbar />
 
       <div className=" mx-3md:container md:mx-auto my-5 rounded-xl p-5 bg-violet-100 min-h-[90vh]  md:w-[35%]">
-      <h1 className="font-bold text-center text-3xl">iTask-Manage your todos at one Place</h1>
+        <h1 className="font-bold text-center text-3xl">
+          iTask-Manage your todos at one Place
+        </h1>
         <div className="addtodo my-5 flex flex-col gap-3">
           <h2 className="text-2xl font-bold my-2">Add a Todo</h2>
 
@@ -94,8 +96,9 @@ function App() {
           type="checkbox"
           checked={showfinished}
           className="mx-2"
-        />Show Finished
-        {/* Show Finished */}
+        />
+        Show Finished
+        <div className="bg-black h-[1px] opacity-15 w-[95%] mx-auto my-3"></div>
         <h2 className="text-2xl font-bold">Your Todos</h2>
         <div className="todos">
           {todos.length === 0 && <div className="m-5">No todo to display</div>}
@@ -124,7 +127,7 @@ function App() {
                     }}
                     className="bg-violet-800 hover:bg-violet-950 px-3 py-1 text-xs text-white font-bold rounded-md mx-1"
                   >
-                   <FaEdit />
+                    <FaEdit />
                   </button>
 
                   <button
@@ -133,7 +136,7 @@ function App() {
                     }}
                     className="bg-violet-800 hover:bg-violet-950 px-3 py-1 text-xs text-white font-bold rounded-md mx-1"
                   >
-                  <MdDelete />
+                    <MdDelete />
                   </button>
                 </div>
               )
